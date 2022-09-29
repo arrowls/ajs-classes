@@ -9,6 +9,7 @@ test('should create class daemon with no errors', () => {
     level: 1,
     attack: 10,
     defence: 40,
+    stoned: false,
   });
 });
 test.each([

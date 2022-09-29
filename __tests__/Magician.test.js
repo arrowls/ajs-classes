@@ -9,6 +9,7 @@ test('should create class magician with no errors', () => {
     level: 1,
     attack: 10,
     defence: 40,
+    stoned: false,
   });
 });
 test.each([
@@ -28,4 +29,15 @@ test('method levelup should work correctly', () => {
   magician.damage(100);
   magician.levelUp();
   expect([magician.level, magician.health]).toEqual([2, 100]);
+});
+test('setter attack should set correct value', () => {
+  const magician = new Magician('test name');
+  magician.attackAmmount = 4;
+  expect(magician.attackAmmount).toBe(6);
+});
+test('method stoned should work correctly', () => {
+  const magician = new Magician('test name');
+  magician.setStoned = true;
+  magician.attackAmmount = 2;
+  expect(magician.attackAmmount).toBe(3);
 });

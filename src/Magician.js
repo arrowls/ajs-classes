@@ -8,18 +8,18 @@ export default class Magician extends Character {
     this.stoned = false;
   }
 
-  set attack(distance) {
+  set attackAmmount(distance) {
     this.attack *= (10 - distance) / 10;
     if (this.stoned) {
       this.attack -= Math.log2(distance) * 5;
     }
   }
 
-  get attack() {
+  get attackAmmount() {
     return this.attack;
   }
 
-  set stoned(value = false) { // на случай, если "дурман" нужно будет отменить
+  set setStoned(value = false) { // на случай, если "дурман" нужно будет отменить
     this.stoned = value;
   }
 }
